@@ -1,6 +1,6 @@
-# myapp
+# Coworking App
 
-A new Flutter project.
+Designed to bridge the gap between freelance professionals and users who need their services. With an intuitive interface and advanced features, this app provides an optimal experience for both parties.
 
 ## Getting Started
 
