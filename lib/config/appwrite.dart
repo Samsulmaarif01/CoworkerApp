@@ -3,14 +3,21 @@ import 'package:appwrite/appwrite.dart';
 class AppWrite {
   static const projectId = '67b6e82c002bae238de3';
   static const endpointId = 'https://cloud.appwrite.io/v1';
+  static const databaseId = '67b82e660031e912041f';
+  static const collectionUsers = '67b82ed500291a8139b4';
+  static const collectionWorkers = '67b82f5b0004b3dae6c3';
+  static const collectionBooking = '67b82f760022a58b880f';
+
   static Client client = Client();
   static late Account account;
+  static late Databases databases;
 
   static init() {
-    Account account = Account(client);
     client
         .setEndpoint(endpointId)
         .setProject(projectId)
         .setSelfSigned(status: true);
+    account = Account(client);
+    databases = Databases(client);
   }
 }
