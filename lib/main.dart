@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:myapp/config/app_color.dart';
 import 'package:myapp/config/appwrite.dart';
 
 void main() {
@@ -16,9 +18,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Coworking App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      theme: ThemeData.light(
         useMaterial3: true,
+      ).copyWith(
+        textTheme: GoogleFonts.poppinsTextTheme().apply(
+          bodyColor: AppColor.text,
+          displayColor: AppColor.text,
+        ),
+        primaryColor: AppColor.primary,
+        colorScheme: ColorScheme.light(
+          primary: AppColor.primary,
+        ),
       ),
       home: const MyHomePage(title: 'Coworking'),
     );

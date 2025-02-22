@@ -7,6 +7,7 @@ class AppWrite {
   static const collectionUsers = '67b82ed500291a8139b4';
   static const collectionWorkers = '67b82f5b0004b3dae6c3';
   static const collectionBooking = '67b82f760022a58b880f';
+  static const bucketWorker = '67b8a35d000b729368a3';
 
   static Client client = Client();
   static late Account account;
@@ -19,5 +20,9 @@ class AppWrite {
         .setSelfSigned(status: true);
     account = Account(client);
     databases = Databases(client);
+  }
+
+  String imageURL(String fileId) {
+    return '$endpointId/buckets/$bucketWorker/files/$fileId/view?project=$projectId';
   }
 }
